@@ -122,7 +122,7 @@ func (r *Ring) Get(key string) (string, error) {
 	if idx == len(r.ring) {
 		// The key hash is larger than every ring address: wrap around to the
 		// smallest address on the ring.
-		idx = len(r.ring) - 1
+		idx = 0
 	}
 	return r.hashMap[r.ring[idx]], nil
 }
